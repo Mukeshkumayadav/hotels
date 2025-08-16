@@ -1,4 +1,4 @@
-const MenuItem = require('../models/menuitem');
+const MenuItem = require('../models/menuitem.js');
 
 
 const express = require('express');

@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
-require('dotenv').config(); // Load .env variables
+require('dotenv').config(); 
 
 
 const mongoURL = process.env.MONGODB_URI;
 
-//const mongoURL = process.env.MONGODB_URI_LOCAL; 
+
+// const mongoURL = process.env.MONGODB_URI_LOCAL;
 
 if (!mongoURL) {
   throw new Error('❌ MongoDB URI is not defined in your .env file');
@@ -14,7 +15,7 @@ if (!mongoURL) {
 const connectionOptions = {
   serverSelectionTimeoutMS: 5000,
   maxPoolSize: 10,
-  ssl: mongoURL.startsWith('mongodb+srv'), // Only use SSL for Atlas
+  ssl: mongoURL.startsWith('mongodb+srv'), // Atlas requires SSL
   tlsAllowInvalidCertificates: false
 };
 
